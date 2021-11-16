@@ -5,5 +5,5 @@ public interface LinkedListInterface {
 
 	public void Insert(int data);
 	public void Show();
-
+	public void Append(int data);
 }

@@ -8,6 +8,7 @@ public class Node {
 		super();
 		this.data = data;
 		this.next = null;
-	}
-	 
+
+	} 
+
 }
