@@ -1,16 +1,27 @@
 package com.bridgelabz.linkedlist;
 
 public class Runner {
-	
+
 	public static void main(String[] args) {
-		
+
 		LinkedList list = new LinkedList();
-		list.insert(56);
-		list.insert(30);
-		list.insert(70);
+
+		Node firstNode = new Node(56);
+		Node secondNode = new Node(70);
+		Node thirdNode = new Node(30);
+		Node head = firstNode;
+		firstNode.next = secondNode;
+		secondNode.next = thirdNode;
+		Node tail = thirdNode;
 		
-		list.show();;
+		Node temp = head;
+		System.out.print("LinkedList:");
+        while (temp != null) {
+            System.out.print(temp.data+"->");
+            temp = temp.next;
+        }
 		
+
 	}
 
 }
