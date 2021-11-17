@@ -1,7 +1,7 @@
 package com.bridgelabz.linkedlist;
 
-public class LinkedList implements LinkedListInterface {
 
+public class LinkedList implements LinkedListInterface{
 	Node head;
 	Node tail;
 
@@ -35,8 +35,7 @@ public class LinkedList implements LinkedListInterface {
 			Node temp = tail;
 			this.tail = node;
 			temp.next = node;
-		}
-
+		}	
 	}
 
 	@Override
@@ -50,7 +49,7 @@ public class LinkedList implements LinkedListInterface {
 		}
 		System.out.print(node.data + "->");
 		node = node.next;
-
+		
 	}
 
 	@Override
@@ -70,9 +69,8 @@ public class LinkedList implements LinkedListInterface {
 			node.next = n.next;
 			n.next = node;
 		}
-
 	}
-
+	
 	public void insertAtStart(int data) {
 		Node node = new Node(data);
 		node.data = data;
@@ -80,14 +78,32 @@ public class LinkedList implements LinkedListInterface {
 		node.next = head;
 		head = node;
 	}
-
 	@Override
 	public Node pop() {
 		// TODO Auto-generated method stub
 		Node temp = this.head;
 		this.head = this.head.next;
 		return temp;
+	}
 
+	@Override
+	public int popLast() {
+		// TODO Auto-generated method stub
+		if (head == null) {
+			System.out.println("List is empty, hence deletion is not possible");
+		}
+		if (head.next == null) {
+			Node temp = head;
+			head = null;
+			return temp.data;
+		}
+		Node temp = head;
+		while (temp.next.next != null) {
+			temp = temp.next;
+		}
+		int data = temp.next.data;
+		temp.next = null;
+		return data;
 	}
 
 }

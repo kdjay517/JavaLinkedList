@@ -7,5 +7,7 @@ public interface LinkedListInterface {
 	public void Show();
 	public void insertAt(int index,int data);
 	public Node pop();
+	public int  popLast ();
+	
 }
 

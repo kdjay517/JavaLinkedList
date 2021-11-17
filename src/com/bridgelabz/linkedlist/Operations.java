@@ -30,6 +30,13 @@ public class Operations {
         System.out.println("");
         Node deleteNode = list.pop();
         list.Show();
+    }
+	
+	public void deleteLastNode() {
+        addDataAtStart();
+        System.out.println("");
+        list.popLast();
+        list.Show();
 
     }
 
