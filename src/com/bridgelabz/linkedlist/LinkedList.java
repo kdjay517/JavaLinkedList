@@ -22,7 +22,6 @@ public class LinkedList implements LinkedListInterface {
 			n.next = node;
 		}
 		return node;
-
 	}
 
 	@Override
@@ -41,7 +40,22 @@ public class LinkedList implements LinkedListInterface {
 	}
 
 	@Override
+	public void Show() {
+		// TODO Auto-generated method stub
+		Node node = head;
+		System.out.print("LinkedList:");
+		while (node.next != null) {
+			System.out.print(node.data + "->");
+			node = node.next;
+		}
+		System.out.print(node.data + "->");
+		node = node.next;
+
+	}
+
+	@Override
 	public void insertAt(int index, int data) {
+		// TODO Auto-generated method stub
 		Node node = new Node(data);
 		node.data = data;
 		node.next = null;
@@ -56,10 +70,10 @@ public class LinkedList implements LinkedListInterface {
 			node.next = n.next;
 			n.next = node;
 		}
+
 	}
-	
-	public void insertAtStart(int data)
-	{
+
+	public void insertAtStart(int data) {
 		Node node = new Node(data);
 		node.data = data;
 		node.next = null;
@@ -68,16 +82,11 @@ public class LinkedList implements LinkedListInterface {
 	}
 
 	@Override
-	public void Show() {
+	public Node pop() {
 		// TODO Auto-generated method stub
-		Node node = head;
-		System.out.print("LinkedList:");
-		while (node.next != null) {
-			System.out.print(node.data + "->");
-			node = node.next;
-		}
-		System.out.print(node.data + "->");
-		node = node.next;
+		Node temp = this.head;
+		this.head = this.head.next;
+		return temp;
 
 	}
 
