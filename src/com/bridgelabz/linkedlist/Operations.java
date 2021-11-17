@@ -39,6 +39,11 @@ public class Operations {
         list.Show();
 
     }
+	
+	public void findNodeBasedOnValue() {
+        addDataAtStart();
+        list.findNode(30);
+    }
 
 }
 

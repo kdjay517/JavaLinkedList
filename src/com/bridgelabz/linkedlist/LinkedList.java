@@ -1,7 +1,7 @@
 package com.bridgelabz.linkedlist;
 
 
-public class LinkedList implements LinkedListInterface{
+public class LinkedList implements LinkedListInterface {
 	Node head;
 	Node tail;
 
@@ -35,21 +35,7 @@ public class LinkedList implements LinkedListInterface{
 			Node temp = tail;
 			this.tail = node;
 			temp.next = node;
-		}	
-	}
-
-	@Override
-	public void Show() {
-		// TODO Auto-generated method stub
-		Node node = head;
-		System.out.print("LinkedList:");
-		while (node.next != null) {
-			System.out.print(node.data + "->");
-			node = node.next;
 		}
-		System.out.print(node.data + "->");
-		node = node.next;
-		
 	}
 
 	@Override
@@ -70,7 +56,7 @@ public class LinkedList implements LinkedListInterface{
 			n.next = node;
 		}
 	}
-	
+
 	public void insertAtStart(int data) {
 		Node node = new Node(data);
 		node.data = data;
@@ -78,6 +64,7 @@ public class LinkedList implements LinkedListInterface{
 		node.next = head;
 		head = node;
 	}
+
 	@Override
 	public Node pop() {
 		// TODO Auto-generated method stub
@@ -104,6 +91,47 @@ public class LinkedList implements LinkedListInterface{
 		int data = temp.next.data;
 		temp.next = null;
 		return data;
+	}
+
+	@Override
+	public void findNode(int value) {
+		// TODO Auto-generated method stub
+		Node tempNode = head;
+		int index = 1;
+		boolean flag = false;
+		if (head == null) {
+			System.out.println("List is empty");
+		} else {
+			while (tempNode != null) {
+				if (tempNode.data == value) {
+					flag = true;
+					break;
+				}
+				index++;
+				tempNode = tempNode.next;
+			}
+		}
+		if (flag == true) {
+			System.out.println("Value:" + value + " is present at Index:" + index);
+		} else {
+			System.out.println("Element no present");
+		}
+
+	}
+
+	@Override
+	public void Show() {
+		// TODO Auto-generated method stub
+		Node node = head;
+		System.out.print("LinkedList:");
+		while (node.next != null) {
+			System.out.print(node.data + "->");
+			node = node.next;
+		}
+		System.out.print(node.data + "->");
+		node = node.next;
+
+
 	}
 
 }
